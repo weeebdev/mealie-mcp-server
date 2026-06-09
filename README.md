@@ -50,21 +50,16 @@ fastmcp install src/server.py \
   --env-var MEALIE_API_KEY=your-mealie-api-key
 ```
 
-#### Option 2: Manual Configuration
+#### Option 2: Using uvx
 
-Add the server to your `claude_desktop_config.json`:
+Run directly from GitHub without cloning:
 
 ```json
 {
   "mcpServers": {
     "mealie-mcp-server": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/repo/src",
-        "run",
-        "server.py"
-      ],
+      "command": "uvx",
+      "args": ["git+https://github.com/weeebdev/mealie-mcp-server"],
       "env": {
         "MEALIE_BASE_URL": "https://your-mealie-instance.com",
         "MEALIE_API_KEY": "your-mealie-api-key"
